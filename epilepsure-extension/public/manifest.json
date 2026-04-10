@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Epilepsure",
+  "version": "1.0.0",
+  "description": "Automated Trigger Warning System for YouTube.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Epilepsure Settings"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ]
+}

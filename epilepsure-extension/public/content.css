@@ -1,0 +1,41 @@
+.epilepsure-blur {
+  filter: blur(40px) brightness(40%) !important;
+  transition: filter 0.2s ease-in !important;
+}
+
+.epilepsure-warning-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.epilepsure-warning-overlay h1 {
+  font-size: 32px;
+  color: #ff4d4d;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  background: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.epilepsure-warning-overlay p {
+  font-size: 18px;
+  font-weight: bold;
+  background: black;
+  padding: 8px 15px;
+  border-radius: 4px;
+  margin: 5px;
+}
