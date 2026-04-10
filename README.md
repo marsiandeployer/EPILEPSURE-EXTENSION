@@ -29,8 +29,7 @@ Epilepsure is an automated trigger warning system designed to detect and block h
 Currently, Epilepsure is available as a developer-mode package for Chromium-based browsers (Chrome, Edge, Brave).
 
 ### 1. Download the Package
-- Go to the [Epilepsure Website](https://epilepsure-landing.vercel.app) and click **Download v1.0**.
-- Or, download directly from this repo: [`epilepsure-landing/public/epilepsure-extension-v1.zip`](epilepsure-landing/public/epilepsure-extension-v1.zip).
+- Вownload directly from this repo: [`epilepsure-landing/public/epilepsure-extension-v1.zip`](epilepsure-landing/public/epilepsure-extension-v1.zip).
 - Extract the ZIP file to a folder on your computer.
 
 ### 2. Load into Browser
