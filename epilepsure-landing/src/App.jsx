@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Eye, Settings2, Download, Zap, Heart } from 'lucide-react';
+import { Shield, Info, Activity, Monitor, Smartphone, Download, Globe, Zap, CheckCircle2, AlertTriangle, Cpu } from 'lucide-react';
 import './index.css';
 
 function App() {
@@ -7,89 +7,186 @@ function App() {
     <div className="app">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="logo">
-          <div className="logo-icon">
-            <Shield size={22} color="white" strokeWidth={2.5} />
+        <div className="container">
+          <div className="logo">
+            <Shield size={24} color="var(--primary-color)" fill="var(--primary-color)" fillOpacity={0.1} />
+            Epilepsure
           </div>
-          Epilepsure
+          <div className="nav-links">
+            <a href="#about">The Problem</a>
+            <a href="#method">How it Works</a>
+            <a href="#features">Features</a>
+            <a href="#downloads">Install</a>
+          </div>
         </div>
-        <div className="nav-links">
-          <a href="#features">Features</a>
-          <a href="#demo">How it works</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <button className="btn-primary" onClick={() => alert('Download Zip provided by agent!')}>
-          <Download size={18} />
-          Add to Chrome
-        </button>
       </nav>
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="hero">
-        <div className="hero-pill">
-          Harding Test Compliant
-        </div>
-        <h1>
-          Browse the web without <br/>
-          <span>fear of flashing lights.</span>
-        </h1>
-        <p>
-          Epilepsure is a powerful, lightweight browser extension that instantly detects and blurs harmful strobes and saturated red flashes on social media in real-time.
-        </p>
-        <div className="hero-buttons">
-          <button className="btn-primary">
-            <Download size={20} />
-            Install for Free
-          </button>
-          <button className="btn-secondary">
-            <Eye size={20} />
-            Watch Demo
-          </button>
+        <div className="container">
+          <div className="hero-pill">
+            <Zap size={14} fill="currentColor" />
+            Harding Test Compliant Detection
+          </div>
+          <h1>Make the internet safer<br />for photosensitive users.</h1>
+          <p>
+            An automated trigger warning system that detects bright flickering lights and saturated red flashes on social media.
+          </p>
+          <div className="hero-actions">
+            <a href="#downloads" className="btn btn-primary">
+              <Download size={20} />
+              Get the Extension
+            </a>
+            <a href="#about" className="btn btn-outline">
+              Learn the Science
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Features */}
+      {/* The Problem Section */}
+      <section id="about" className="info-section">
+        <div className="container info-grid">
+          <div className="info-content">
+            <h2>The Risk of Autoplay</h2>
+            <p>
+              For individuals with photosensitive epilepsy, daily internet use is a minefield. Modern social media feeds are optimized for engagement, often leading to content with high-frequency strobes, flash photography, or provocative visual patterns.
+            </p>
+            <p>
+              Without automated intervention, a single autoplaying video can trigger a seizure before the user has time to look away or close the page.
+            </p>
+            <div style={{ marginTop: '2rem', display: 'flex', gap: '2rem' }}>
+              <div>
+                <h4 style={{ color: 'var(--alert-color)', fontSize: '2rem' }}>3%</h4>
+                <p style={{ fontSize: '0.875rem' }}>of people with epilepsy are photosensitive</p>
+              </div>
+              <div>
+                <h4 style={{ color: 'var(--primary-color)', fontSize: '2rem' }}>&lt;50ms</h4>
+                <p style={{ fontSize: '0.875rem' }}>Detection latency in browsers</p>
+              </div>
+            </div>
+          </div>
+          <div className="problem-card">
+            <h3>Common Risk Factors</h3>
+            <ul className="trigger-list">
+              <li className="trigger-item">
+                <div className="trigger-dot" />
+                <div>
+                  <strong>High Frequency Stroboscopic Effects</strong>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>More than 3 flashes within a one-second window.</p>
+                </div>
+              </li>
+              <li className="trigger-item">
+                <div className="trigger-dot" style={{ backgroundColor: 'var(--alert-color)' }} />
+                <div>
+                  <strong>Provocative Red Transitions</strong>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Saturated red flashes are statistically more likely to trigger cortical excitation.</p>
+                </div>
+              </li>
+              <li className="trigger-item">
+                <div className="trigger-dot" style={{ backgroundColor: '#64748b' }} />
+                <div>
+                  <strong>Spatial Pattern Provocation</strong>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>High-contrast stripes or geometric patterns that flicker during scrolling.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works / The Science */}
+      <section id="method" className="features" style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--border-color)' }}>
+        <div className="container">
+          <div className="features-header">
+            <h2>The Science of Protection</h2>
+            <p style={{ maxWidth: '700px', margin: '0 auto' }}>
+              Epilepsure implements a localized version of the ITU-R BT.1702 recommendation, commonly known as the Harding Test.
+            </p>
+          </div>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon"><Cpu size={24} /></div>
+              <h3>Real-time Analysis</h3>
+              <p>The system samples video frames 30 times per second using a hidden canvas, calculating the relative luminance of every frame locally on your device.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon"><Activity size={24} /></div>
+              <h3>Frequency Tracking</h3>
+              <p>A rolling buffer tracks the mathematical delta between frames. If the pattern matches a "dangerous sequence" (rapid luminance oscillation), the shield activates.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon"><Shield size={24} /></div>
+              <h3>Automatic Intervention</h3>
+              <p>The video is instantly blured and paused. You are presented with a clear warning and must manually choose to "Reveal Video" to continue.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Features */}
       <section id="features" className="features">
-        <div className="feature-card">
-          <div className="feature-icon">
-            <Zap size={32} />
+        <div className="container">
+          <div className="features-header">
+            <h2>Browser Integrated</h2>
+            <p>Built for the modern web with performance and privacy at its core.</p>
           </div>
-          <h3>Real-time Detection</h3>
-          <p>Scans every frame of web videos at up to 60fps without slowing down your browser, catching flickers instantly.</p>
-        </div>
-        <div className="feature-card">
-          <div className="feature-icon">
-            <Shield size={32} />
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon"><Globe size={24} /></div>
+              <h3>YouTube Optimized</h3>
+              <p>Deep integration with the YouTube player ensures detection works across shorts, livestreams, and standard video uploads.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon"><Info size={24} /></div>
+              <h3>Privacy-First</h3>
+              <p>All video analysis happens inside your browser. No data is sent to our servers, and your watch history remains completely private.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon"><CheckCircle2 size={24} /></div>
+              <h3>Zero Latency</h3>
+              <p>Optimized algorithms ensure that the extension doesn't slow down your browsing or cause video buffering.</p>
+            </div>
           </div>
-          <h3>Instant Blur Shield</h3>
-          <p>The moment a harmful strobe is detected, the video is paused and obscured by a thick protective blur filter.</p>
-        </div>
-        <div className="feature-card">
-          <div className="feature-icon">
-            <Settings2 size={32} />
-          </div>
-          <h3>Custom Sensitivity</h3>
-          <p>Tune the algorithm's strictness to match your specific photosensitive needs, balancing protection and viewing.</p>
         </div>
       </section>
 
-      {/* Interactive Demo representation */}
-      <section id="demo" className="demo">
-        <h2>See Epilepsure in Action</h2>
-        <p style={{color: 'var(--text-muted)'}}>We simulate a rapid visual trigger below. Notice how the shield completely obscures the risk.</p>
-        
-        <div className="demo-browser">
-          <div className="browser-header">
-            <div className="dot red"></div>
-            <div className="dot yellow"></div>
-            <div className="dot green"></div>
-            <div style={{marginLeft: '20px', background: 'rgba(255,255,255,0.1)', padding: '4px 12px', borderRadius: '12px', fontSize: '12px', color: '#ccc'}}>youtube.com/watch</div>
-          </div>
-          <div className="browser-content">
-            <div className="fake-video"></div>
-            <div className="blur-overlay">
-              <h2>⚠️ EPILEPSURE WARNING</h2>
-              <p style={{fontWeight: 'bold', background: 'black', padding: '5px 15px', borderRadius: '4px'}}>Flashing lights detected.</p>
+      {/* Downloads Section */}
+      <section id="downloads" className="downloads">
+        <div className="container">
+          <h2>Install Protection</h2>
+          <p style={{ color: 'var(--text-secondary)' }}>Free, open-source, and ready to protect.</p>
+          
+          <div className="downloads-grid">
+            {/* Chrome Extension */}
+            <div className="download-card">
+              <Globe size={40} color="var(--primary-color)" />
+              <h4>Browser Extension</h4>
+              <p>Currently available for Chrome and Edge. Works on YouTube PC via developer mode.</p>
+              <a href="/epilepsure-extension-v1.zip" download className="btn btn-primary" style={{ width: '100%' }}>
+                <Download size={18} />
+                Download v1.0
+              </a>
+            </div>
+
+            {/* Windows Desktop */}
+            <div className="download-card">
+              <Monitor size={40} color="#94a3b8" />
+              <h4>Windows Desktop</h4>
+              <p>System-wide protection for apps and gaming. Coming soon to the Microsoft Store.</p>
+              <button className="btn btn-disabled" style={{ width: '100%' }} disabled>
+                Coming Q4 2024
+              </button>
+            </div>
+
+            {/* Mobile App */}
+            <div className="download-card">
+              <Smartphone size={40} color="#94a3b8" />
+              <h4>Mobile App</h4>
+              <p>Integrated protection for Instagram and TikTok feeds. Currently in Beta testing.</p>
+              <button className="btn btn-disabled" style={{ width: '100%' }} disabled>
+                Join Waitlist
+              </button>
             </div>
           </div>
         </div>
@@ -97,14 +194,22 @@ function App() {
 
       {/* Footer */}
       <footer>
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', marginBottom: '10px'}}>
-          <Shield size={20} color="var(--primary)" />
-          <span style={{fontWeight: 800}}>Epilepsure</span>
+        <div className="container">
+          <div className="logo">
+            <Shield size={24} color="var(--primary-color)" fill="var(--primary-color)" fillOpacity={0.1} />
+            Epilepsure
+          </div>
+          <div className="footer-links">
+            <a href="https://github.com/agneloze/EPILEPSURE-EXTENSION" target="_blank" rel="noopener noreferrer">GitHub Project</a>
+            <a href="#about">Privacy Policy</a>
+            <a href="mailto:support@epilepsure.com">Report a Bug</a>
+          </div>
+          <p>&copy; {new Date().getFullYear()} Epilepsure Open Source Project. Documentation-first approach.</p>
         </div>
-        <p>Built with <Heart size={14} color="var(--danger)" style={{verticalAlign: 'middle', margin: '0 4px'}}/> to make the internet safer for everyone.</p>
       </footer>
     </div>
   );
 }
 
 export default App;
+
