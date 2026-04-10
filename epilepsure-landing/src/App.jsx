@@ -66,10 +66,10 @@ function App() {
               <Activity size={24} color="var(--primary-color)" />
               Safety Thresholds
             </h3>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', list-style: 'none' }}>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', listStyle: 'none' }}>
               <li style={{ display: 'flex', gap: '1rem' }}>
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--primary-color)', marginTop: '0.6rem' }} />
-                <p><strong>Flicker Rate:</strong> Detection of sequences with >3 flashes per second.</p>
+                <p><strong>Flicker Rate:</strong> Detection of sequences with &gt;3 flashes per second.</p>
               </li>
               <li style={{ display: 'flex', gap: '1rem' }}>
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--alert-color)', marginTop: '0.6rem' }} />
